@@ -1,0 +1,24 @@
+import arc .*;
+import java.awt.Color;
+import java.awt.image.BufferedImage;
+import java.awt.Font;
+
+public class textbubble{
+	public static void main(String[] args){
+		Console con = new Console();
+ 
+	int intCount;
+	intCount = 1;
+
+	while(intCount == 1){
+		con.setDrawColor(Color.WHITE);
+		con.fillRoundRect(10, 325, 940, 200, 50, 50);
+		
+		con.setDrawColor(new Color(0, 0, 0));
+		con.drawString("Text Box", 420, 400);
+		
+		Font fntOswald = con.loadFont("Oswald-Regular.ttf", 40);
+		con.setDrawFont(fntOswald);
+		}
+	}
+}
