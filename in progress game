@@ -1,0 +1,65 @@
+import arc .*;
+import java.awt.Color;
+import java.awt.image.BufferedImage;
+import java.awt.Font;
+
+public class textbubble{
+	public static void main(String[] args){
+		Console con = new Console("Midterm Project", 1280, 720);
+ 
+	int intCount;
+	intCount = 1;
+	BufferedImage imgHospital = con.loadImage("Hospital.png");
+	BufferedImage imgRuinedCity = con.loadImage("My project-1(1).png");
+	BufferedImage imgDarkHallway = con.loadImage("DarkHallway3.png");
+	String strOp1;
+	
+	//Scene 1
+	for(intCount = 1; intCount <=150; intCount++){
+		con.drawImage(imgHospital, 0, 0);
+	
+		con.setDrawColor(Color.WHITE);
+		con.drawString("You wake up in hospital groggy and tired.", 230, 400);
+		con.drawString("You step out of bed.", 340, 420);
+
+	con.repaint();
+	con.sleep(33);
+	}
+		con.clear();
+	
+	//Scene 2
+	for(intCount = 1; intCount <=200; intCount++){
+	con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 960, 540);
+	
+	//con.setDrawColor(Color.BLACK);
+		//con.println("Do you look around or leave the room");
+		//strOp1 = con.readLine();
+		
+	con.drawImage(imgHospital, 0, 0);	
+	}
+	con.setDrawColor(Color.WHITE);
+	con.drawString("Do you look around or leave the room", 230, 400);
+		strOp1 = con.readLine();
+		
+		if(strOp1.equalsIgnoreCase("Look around")){
+			while(intCount == 1){
+			con.clear();
+			con.setDrawColor(Color.BLACK);
+			con.fillRect(0, 0, 960, 540); 
+			con.drawImage(imgRuinedCity, 0, 0);
+			con.repaint();
+			con.sleep(33);
+			}
+		}else if(strOp1.equalsIgnoreCase("Leave")){
+			con.clear();
+			while(intCount == 1){
+			con.setDrawColor(Color.BLACK);
+			con.fillRect(0, 0, 960, 540);
+			con.drawImage(imgDarkHallway, 0, 0);
+			con.repaint();
+			con.sleep(33);
+			}	
+	   }
+	}
+}
